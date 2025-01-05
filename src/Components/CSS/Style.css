@@ -92,6 +92,81 @@
     width: 30px;
 }
 
+/* Hamburger Menu */
+.hamburger {
+  display: none; /* Hidden by default */
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+.line {
+  width: 25px;
+  height: 3px;
+  background: black;
+  transition: all 0.3s ease;
+}
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -100%; /* Completely hidden by default */
+  width: 250px;
+  height: 100%;
+  background: rgb(253, 253, 253);
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  transition: left 0.3s ease;
+  z-index: 2000;
+  padding: 20px;
+}
+
+.sidebar.open {
+  left: 0; /* Slide-in when open */
+}
+
+.sidebar-list {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar-list .item {
+  display: block;
+  padding: 15px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  text-align: left;
+  cursor: pointer;
+}
+
+/* Overlay */
+.overlay {
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1500;
+}
+
+.overlay.show {
+  display: block; /* Show overlay when active */
+}
+
+/* Media Query for Mobile */
+@media (max-width: 768px) {
+  .list {
+    display: none; /* Hide desktop nav on mobile */
+  }
+
+  .hamburger {
+    display: flex; /* Show hamburger menu */
+  }
+}
+
+
 .intro{
     margin-top: 7%;
     margin-left: 5%;
@@ -101,7 +176,6 @@
 .body{
     display: flex;
     justify-content: space-between;
-    align-items: center;
 }
 
 
@@ -152,6 +226,67 @@
     align-items: center;
     text-align: center;
 }
+
+@media (max-width: 768px) {
+  .intro {
+    margin-top: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
+  .body {
+    flex-direction: column; /* Stack content vertically */
+    text-align: center; /* Center-align text for better readability */
+  }
+
+  .text {
+    width: 100%; /* Allow text to occupy full width */
+    margin-bottom: 20px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .profile {
+    width: 250px; /* Reduce profile image size */
+    height: 250px;
+    margin: 20px auto; /* Center-align image */
+  }
+
+  .body-txt-btn {
+    padding: 10px 30px; /* Adjust padding for smaller screens */
+    font-size: 20px;
+  }
+
+  .intro-label {
+    margin-right: 0;
+    justify-content: center; /* Center the scroll label */
+  }
+
+  .intro-scroll {
+    padding: 20px; /* Adjust spacing */
+    font-size: 14px; /* Reduce font size for labels */
+  }
+
+  .bio-info {
+    flex-direction: column; 
+    margin: 5% 10%;
+    gap: 20px; 
+  }
+
+  .bio-data {
+    text-align: center; /* Ensure proper alignment */
+  }
+
+  .bio-data h1 {
+    font-size: 40px; /* Adjust heading size */
+  }
+
+  .bio-data p {
+    font-size: 18px; /* Adjust paragraph size */
+  }
+}
+
+
 .passion{
     text-align: center;
     align-items: center;
@@ -178,119 +313,228 @@
     text-align: center;
     padding: 70px;
 }
-.port-head{
-    align-items: center;
-    text-align: center;
-}
-.port-body{
-    display: flex;
-    justify-content: space-between;
-}
-.project{
-    margin: 40px 15px 0px 15px;
-    align-items: center;
-}
-.portfolio{
-    margin: 0% 5% 0% 5%;
-}
-.port-image{
-    width: 590px;
-    height: 360px;
-    border-radius: 50px;
-}
 
-.slider{
+@media (max-width: 768px) {
+  .passion {
     margin-top: 5%;
-    background-color: #f9f9f9;
-}
-.slider-container {
-    position: relative;
-    width: 80%;
-    background-color: #f9f9f9;
-    margin: auto;
-    overflow: hidden;
     text-align: center;
-    align-items: center;
-    padding: 20px;
-  }
-  
-  .slide {
-    display: none;
-    animation: fade 0.5s ease-in-out;
-  }
-  
-  .slide.active {
-    display: block;
-  }
-  
-  .profile-image {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-  }
-  .role {
-    color: gray;
-  }
-  
-  .slider-icon {
-    filter: brightness(0) invert(1); 
-    width: 30px;
-    height: 30px;
-  }
-  .slider-body{
-    margin: 5% 15% 5% 15%;
-    text-align: center;
-    align-items: center;
   }
 
-  .slider-profile{
+  .about {
+    margin: 0 5%;
+  }
+
+  .about-data {
+    flex-direction: column; /* Stack image and text vertically */
+    text-align: center; /* Center-align text for better readability */
+    margin-top: 3%;
+  }
+
+  .about-img {
+    width: 100%; /* Make image responsive */
+    height: auto;
+    border-radius: 20px; /* Maintain rounded corners */
+    margin-bottom: 20px; /* Add space below the image */
+  }
+
+  .about-text {
+    margin: 0; /* Remove left margin */
+    font-size: 18px; /* Adjust font size for smaller screens */
+  }
+
+  .roadmap {
+    margin-top: 5%; /* Add spacing above the roadmap section */
+  }
+
+  .roadmap-text {
+    padding: 30px; /* Reduce padding for better fit */
+  }
+
+  .roadmap-main {
     display: flex;
-    margin-top: 7%;
-    justify-content: center;
-    align-items: center;
-  }
-  .profile-info{
-    text-align: left;
-    margin-left: 10px;
+    flex-wrap: wrap; /* Allow roadmap items to wrap to the next line */
+    justify-content: center; /* Center-align roadmap items */
+    gap: 20px; /* Add spacing between items */
+    margin: 20px 0;
   }
 
-  .prev-btn,
-  .next-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: #000000;
-    border: none;
-    padding: 17px 20px;
-    cursor: pointer;
-    border-radius: 50%;
-    font-size: 25px;
-    z-index: 10;
+  .roadmap-main div {
+    width: 100px; /* Adjust size of roadmap items */
+    height: 100px;
+    background-color: lightgray; /* Add a placeholder color */
+    border-radius: 10px; /* Maintain rounded corners */
   }
-  
-  .prev-btn {
-    left: 10px;
+}
+/* Default styles for larger screens (desktop and tablets) */
+.port-head {
+  align-items: center;
+  text-align: center;
+}
+
+.port-body {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap; /* Allows wrapping of items for mobile */
+}
+
+.project {
+  margin: 40px 15px;
+  align-items: center;
+  flex: 0 0 48%; /* Ensures each project takes 48% of the width, with space between */
+}
+
+.portfolio {
+  margin: 0% 5%;
+}
+
+.port-image {
+  width: 100%; /* Full width for images to be responsive */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 20px; /* Keep rounded corners */
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .port-body {
+    flex-direction: column; /* Stack elements vertically on mobile */
+    align-items: center; /* Center align the elements */
   }
-  
-  .next-btn {
-    right: 10px;
+
+  .project {
+    width: 100%; /* Make each project take full width on smaller screens */
+    margin: 20px 0; /* Space out projects vertically */
   }
-  
-  .prev-btn:hover,
-  .next-btn:hover {
-    background-color: #181818;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-    border-radius: 80px;
+
+  .port-image {
+    width: 100%; /* Ensure the image takes up full width */
+    height: auto;
+    border-radius: 10px; /* Adjust the border radius for smaller screens */
   }
-  
-  @keyframes fade {
-    from {
-      opacity: 0.4;
-    }
-    to {
-      opacity: 1;
-    }
+
+  .port-head h1 {
+    font-size: 30px; /* Adjust font size for smaller screens */
   }
+
+  .project h1 {
+    font-size: 30px; /* Adjust project title size */
+  }
+
+  .project p {
+    font-size: 18px; /* Adjust paragraph text size */
+    color: rgb(94, 99, 99);
+  }
+}
+/* Main Slider Container */
+.slider {
+  margin-top: 5%;
+  background-color: #f9f9f9;
+}
+
+/* Slider Container - Ensures the slider takes full width and is centered */
+.slider-container {
+  position: relative;
+  width: 80%;
+  background-color: #f9f9f9;
+  margin: auto;
+  overflow: hidden;
+  text-align: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Slide Styles */
+.slide {
+  display: none;
+  animation: fade 0.5s ease-in-out;
+}
+
+/* Show active slide */
+.slide.active {
+  display: block;
+}
+
+/* Profile Image Styles */
+.profile-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+
+/* Role text color */
+.role {
+  color: gray;
+}
+
+/* Icon styling for navigation arrows */
+.slider-icon {
+  filter: brightness(0) invert(1);
+  width: 30px;
+  height: 30px;
+}
+
+/* Content and text styles */
+.slider-body {
+  margin: 5% 15% 5% 15%;
+  text-align: center;
+  align-items: center;
+}
+
+/* Profile layout for client feedback */
+.slider-profile {
+  display: flex;
+  margin-top: 7%;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Info section for profile names and roles */
+.profile-info {
+  text-align: left;
+  margin-left: 10px;
+}
+
+/* Previous and Next buttons */
+.prev-btn,
+.next-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #000000;
+  border: none;
+  padding: 17px 20px;
+  cursor: pointer;
+  border-radius: 50%;
+  font-size: 25px;
+  z-index: 10;
+}
+
+.prev-btn {
+  left: 10px;
+}
+
+.next-btn {
+  right: 10px;
+}
+
+/* Hover effects for buttons */
+.prev-btn:hover,
+.next-btn:hover {
+  background-color: #181818;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 80px;
+}
+
+/* Animation for fading in slides */
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Dot Container Styles */
 .dots-container {
   display: flex;
   justify-content: center;
@@ -299,6 +543,7 @@
   margin-bottom: 5%;
 }
 
+/* Dot styles for active and inactive dots */
 .dot {
   width: 7px;
   height: 7px;
@@ -316,12 +561,91 @@
   transform: scale(1.2);
 }
 
+/* Quote Icon Styling */
 .quote {
   fill: gray;
 }
 
-.quote-svg{
+.quote-svg {
   fill: aquamarine;
+}
+
+/* Responsive Design for Smaller Screens */
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  /* Ensure the slider content is centered and the image sizes are adapted */
+  .slider-container {
+    width: 95%; /* Make the slider container take more width on mobile */
+    padding: 10px;
+  }
+
+  /* Adjust font sizes for mobile */
+  .slider-body h2 {
+    font-size: 28px;
+  }
+
+  .slider-body p {
+    font-size: 18px;
+  }
+
+  /* Adjust image sizes for mobile */
+  .profile-image {
+    width: 60px;
+    height: 60px;
+  }
+
+  /* Adjust arrow buttons for mobile */
+  .prev-btn,
+  .next-btn {
+    padding: 12px;
+    font-size: 20px;
+  }
+
+  /* Stack profile and text vertically */
+  .slider-profile {
+    flex-direction: column; /* Stack the profile image and text vertically */
+    text-align: center; /* Center align profile info */
+    margin-top: 5%;
+  }
+
+  .profile-info {
+    text-align: center; /* Align the profile text at the center */
+    margin-left: 0; /* Remove left margin */
+  }
+
+  /* Dot styles on mobile */
+  .dot {
+    width: 10px;
+    height: 10px;
+  }
+
+  .dot.active-dot {
+    width: 20px;
+    height: 7px;
+  }
+}
+
+/* Tablet styles */
+@media (max-width: 1024px) {
+  .slider-container {
+    width: 85%;
+  }
+
+  /* Adjust font sizes for tablets */
+  .slider-body h2 {
+    font-size: 35px;
+  }
+
+  .slider-body p {
+    font-size: 22px;
+  }
+
+  .prev-btn,
+  .next-btn {
+    padding: 15px;
+    font-size: 22px;
+  }
 }
 
 .skills {
@@ -386,7 +710,7 @@
 .skills-main {
   -ms-overflow-style: none; 
 }
-
+/* General styling remains the same */
 .form-container {
   text-align: center;
   margin: 2% 10% 5% 10%;
@@ -400,7 +724,7 @@
 
 .form-input {
   border: none;
-  border-bottom: 2px solid #979797; /* Bottom border */
+  border-bottom: 2px solid #979797;
   padding: 20px;
   font-size: 30px;
   margin-top: 10%;
@@ -410,7 +734,7 @@
   transition: border-color 0.5s ease-in-out;
 }
 
-/* Change border color on focus */
+/* Focus styles */
 .form-input:focus {
   border-bottom-color: #000000;
 }
@@ -423,12 +747,12 @@
   width: 100%;
 }
 
-.form-textbox::placeholder{
+.form-textbox::placeholder {
   margin-bottom: 5%;
   position: absolute;
 }
 
-.form-button{
+.form-button {
   padding: 15px 25px;
   border-radius: 30px;
   border: none;
@@ -436,18 +760,100 @@
   color: white;
   font-size: 20px;
 }
-.form-button:hover{
+
+.form-button:hover {
   transform: scale(1.05);
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   border-radius: 80px;
 }
-.form-button-main{
+
+.form-button-main {
   margin-top: 5%;
   display: flex;
   justify-content: end;
 }
+
+/* Responsive Design */
+@media screen and (max-width: 1200px) {
+  .form-container {
+    margin: 2% 5% 5% 5%;
+  }
+
+  .form-input {
+    font-size: 28px;
+    padding: 15px;
+  }
+
+  .form-button {
+    padding: 12px 20px;
+    font-size: 18px;
+  }
+
+  .form-body {
+    flex-direction: column;
+  }
+
+  .form-input {
+    margin-top: 5%;
+  }
+
+  .form-button-main {
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .form-container {
+    margin: 2% 3% 5% 3%;
+  }
+
+  .form-input {
+    font-size: 24px;
+    padding: 12px;
+  }
+
+  .form-button {
+    padding: 12px 18px;
+    font-size: 18px;
+  }
+
+  .form-body {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .form-button-main {
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .form-container {
+    margin: 2% 1% 5% 1%;
+  }
+
+  .form-input {
+    font-size: 20px;
+    padding: 10px;
+  }
+
+  .form-button {
+    padding: 10px 15px;
+    font-size: 16px;
+  }
+
+  .form-body {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .form-button-main {
+    justify-content: center;
+  }
+}
+
 .footer{
-  background-color: #cecece;
+  background-color: #dadada;
   height: 50vh;
 }
 .footer-body{
@@ -471,16 +877,22 @@
   margin-top: 4%;
 }
 .footer-bottom{
-  margin: 0% 7% 3% 7%;
   display: flex;
   justify-content: space-between;
   text-align: center;
   align-items: center;
+  background-color: #dadada;
 }
 .footer-bottom-div1{
   display: flex;
   align-items: center;
+  margin-left: 7%;
 }
+
+.footer-bottom-div3{
+  margin-right: 7%;
+}
+
 .footer-icon{
   margin-left: 9px;
 }
@@ -511,4 +923,122 @@
   filter: invert(1);
   width: 30px;
   height: 30px;
+}
+.footer-bottom-div2{
+  margin-top: 4%;
+  margin-bottom: 4%;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1200px) {
+  .footer-body {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-body-left,
+  .footer-body-right {
+    margin-top: 20px;
+    width: 100%; /* Ensures these sections take the full width */
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-bottom-div1 {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .footer-icon {
+    width: 25px;
+    height: 25px;
+    margin-left: 5px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .footer{
+    text-align: center;
+  }
+  .footer-body {
+    flex-direction: column;
+    text-align: center;
+    margin: 2% 5%;
+  }
+
+  .footer-link {
+    font-size: 18px;
+  }
+
+  .footer-body-left,
+  .footer-body-right {
+    margin-top: 10px;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-bottom-div1 {
+    margin-top: 3%;
+    margin-bottom: 10px;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .footer-icon {
+    width: 25px;
+    height: 25px;
+  }
+
+  .footer-bottom-div2 {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .footer-body {
+    flex-direction: column;
+    text-align: center;
+    margin: 2% 3%;
+  }
+
+  .footer-link {
+    font-size: 16px;
+  }
+
+  .footer-body-left,
+  .footer-body-right {
+    margin-top: 10px;
+    width: 100%;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .footer-bottom-div1 {
+    margin-bottom: 15px;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .footer-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .footer-bottom-div2 {
+    font-size: 16px;
+  }
 }
