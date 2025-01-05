@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/kashif-project/static/css/main.3d0b254d.css",
-    "main.js": "/kashif-project/static/js/main.5e233a09.js",
+    "main.css": "/kashif-project/static/css/main.f516ebfd.css",
+    "main.js": "/kashif-project/static/js/main.17e57f95.js",
     "static/media/about-img.jpg": "/kashif-project/static/media/about-img.e13ea7f52354f4e7db5d.jpg",
     "static/media/portfolio.webp": "/kashif-project/static/media/portfolio.fb854c30b724bab70fc7.webp",
     "static/media/profile.png": "/kashif-project/static/media/profile.af6699f1e23a021acf4a.png",
@@ -17,11 +17,11 @@
     "static/media/x.svg": "/kashif-project/static/media/x.3a41fd19e98442deae589922e6b0ec27.svg",
     "static/media/rightarrow.svg": "/kashif-project/static/media/rightarrow.8f557680dd0374f5fd7c9e03ab97b42c.svg",
     "static/media/leftarrow.svg": "/kashif-project/static/media/leftarrow.448682c6a60aa397db2a68ad1f5b9903.svg",
-    "main.3d0b254d.css.map": "/kashif-project/static/css/main.3d0b254d.css.map",
-    "main.5e233a09.js.map": "/kashif-project/static/js/main.5e233a09.js.map"
+    "main.f516ebfd.css.map": "/kashif-project/static/css/main.f516ebfd.css.map",
+    "main.17e57f95.js.map": "/kashif-project/static/js/main.17e57f95.js.map"
   },
   "entrypoints": [
-    "static/css/main.3d0b254d.css",
-    "static/js/main.5e233a09.js"
+    "static/css/main.f516ebfd.css",
+    "static/js/main.17e57f95.js"
   ]
 }
