@@ -1,10 +1,10 @@
-// Import necessary libraries
-import React, { useState } from "react";
-import "./CSS/Style.css"; // Create this file for styling
-import rightarrow from './icons/rightarrow.svg'
-import leftarrow from './icons/leftarrow.svg'
-import quotes from './icons/quotes.svg'
-const Carousel = () => {
+import React, { useState, useRef } from "react";
+import "./CSS/Style.css"; // Keep your existing styles
+import rightarrow from './icons/rightarrow.svg';
+import leftarrow from './icons/leftarrow.svg';
+import quotes from './icons/quotes.svg';
+
+const Carousel = (props) => {
   const slides = [
     {
       id: 1,
@@ -33,6 +33,7 @@ const Carousel = () => {
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
+  const touchStartX = useRef(0); // Track the initial touch position
 
   const nextSlide = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % slides.length);
@@ -42,54 +43,94 @@ const Carousel = () => {
     setCurrentIndex((prevIndex) => (prevIndex - 1 + slides.length) % slides.length);
   };
 
+  // Handle swipe events
+  const handleTouchStart = (e) => {
+    touchStartX.current = e.touches[0].clientX; // Get the initial touch position
+  };
+
+  const handleTouchMove = (e) => {
+    // Prevent default behavior if you need to swipe without scrolling
+    e.preventDefault();
+  };
+
+  const handleTouchEnd = (e) => {
+    const touchEndX = e.changedTouches[0].clientX; // Get the touch end position
+    const swipeThreshold = 50; // Minimum distance to detect a swipe
+
+    // Detect swipe direction
+    if (touchStartX.current - touchEndX > swipeThreshold) {
+      nextSlide(); // Swipe left
+    } else if (touchEndX - touchStartX.current > swipeThreshold) {
+      prevSlide(); // Swipe right
+    }
+  };
+
   return (
-    <>
-      <div className="slider">
-        <div className="slider-container">
-          {slides.map((slide, index) => (
-            <div
-              key={slide.id}
-              className={`slide ${index === currentIndex ? "active" : ""}`}
-            >
-              {index === currentIndex && (
-                <>
-                  <h2 style={{ fontSize: 50, marginTop: 50 }}>{slide.heading}</h2>
-                  <div className="slider-body">
-                  <div class="quote">
-                    <img viewBox="0 0 10 10" className="quote-svg" style={{width:70, height:50}} src={quotes} alt="" />
+    <div
+      className={`slider-${props.mode}`}
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
+    >
+      <div className={`slider-container-${props.mode}`}>
+        {slides.map((slide, index) => (
+          <div
+            key={slide.id}
+            className={`slide ${index === currentIndex ? "active" : ""}`}
+          >
+            {index === currentIndex && (
+              <>
+                <h2 style={{ fontSize: 50, marginTop: 50 }}>{slide.heading}</h2>
+                <div className="slider-body">
+                  <div className="quote">
+
+                    <img
+                      viewBox="0 0 10 10"
+                      className={`quote-svg quote-svg-${props.mode}`}
+                      style={{ width: 70, height: 50 }}
+                      src={quotes}
+                      alt=""
+                    />
                   </div>
-                    <p style={{ fontSize: 30 }}>{slide.text}</p>
-                    <div className="slider-profile">
-                      <img src={slide.image} alt={slide.name} className="profile-image" />
-                      <div className="profile-info">
-                        <h2>{slide.name}</h2>
-                        <p style={{ fontSize: 20 }} className="role">{slide.role}</p>
-                      </div>
+                  <p style={{ fontSize: 30 }}>{slide.text}</p>
+                  <div className={`slider-profile`}>
+                    <img
+                      src={slide.image}
+                      alt={slide.name}
+                      className="profile-image"
+                    />
+                    <div className="profile-info">
+                      <h2>{slide.name}</h2>
+                      <p style={{ fontSize: 20 }} className="role">
+                        {slide.role}
+                      </p>
                     </div>
                   </div>
-                </>
-              )}
-            </div>
-          ))}
-          <button className="prev-btn" onClick={prevSlide}>
-            <img src={leftarrow} alt="Left arrow" className="slider-icon" />
-          </button>
-          <button className="next-btn" onClick={nextSlide}>
-            <img src={rightarrow} alt="Right arrow" className="slider-icon" />
-          </button>
-        </div>
-        <div className="dots-container">
-          {slides.map((_, index) => (
-            <div
-              key={index}
-              className={`dot ${index === currentIndex ? "active-dot" : ""}`}
-              onClick={() => setCurrentIndex(index)}
-            ></div>
-          ))}
-        </div>
+                </div>
+              </>
+            )}
+          </div>
+        ))}
+        {/* Navigation buttons (hidden on mobile) */}
+        <button className={`prev-btn btn-${props.mode}`} onClick={prevSlide}>
+          <img src={leftarrow} alt="Left arrow" className={`slider-icon-${props.mode}`} />
+        </button>
+        <button className={`next-btn btn-${props.mode}`} onClick={nextSlide}>
+          <img src={rightarrow} alt="Right arrow" className={`slider-icon-${props.mode}`} />
+        </button>
       </div>
-    </>
+      {/* Dots for navigation */}
+      <div className="dots-container">
+        {slides.map((_, index) => (
+          <div
+            key={index}
+            className={`dot-${props.mode} ${index === currentIndex ? "active-dot" : ""}`}
+            onClick={() => setCurrentIndex(index)}
+          ></div>
+        ))}
+      </div>
+    </div>
   );
-};  
+};
 
 export default Carousel;

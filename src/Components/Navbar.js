@@ -1,27 +1,63 @@
-import React, { useState, useEffect } from 'react';
-import github from './icons/github.svg';
-import linkedin from './icons/linkedin.svg';
-import instagram from './icons/instagram.svg';
-import x from './icons/x.svg';
-import './CSS/Style.css';
+import React, { useState, useEffect, useRef } from "react";
+import github from "./icons/github.svg";
+import linkedin from "./icons/linkedin.svg";
+import instagram from "./icons/instagram.svg";
+import x from "./icons/x.svg";
+import dark from "./icons/dark.svg";
+import light from "./icons/light.svg";
+import "./CSS/Style.css";
+import "./CSS/Dark.css"
 
-const Navbar = ({ onScrollToSection }) => {
-  const [activeIndex, setActiveIndex] = useState(0); // Set default active index to 0 (Home)
-  const [isSidebarOpen, setSidebarOpen] = useState(false); // Manage sidebar state
-  const [isDarkMode, setIsDarkMode] = useState(false); // Detect dark mode
+const Navbar = ({ onScrollToSection, toggleMode, mode }) => {
+  const [activeIndex, setActiveIndex] = useState(0); // Default active index
+  const [isSidebarOpen, setSidebarOpen] = useState(false); // Sidebar state
+  const [isDarkMode, setIsDarkMode] = useState(false); // Dark mode state
+
+  // Create a ref for the sidebar to check if the click is inside it
+  const sidebarRef = useRef(null);
 
   useEffect(() => {
-    const matchDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    setIsDarkMode(matchDarkMode); // Update state based on system preference
+    // Check the system's theme preference initially
+    const systemPreference = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    
+    // Load dark mode state from localStorage if it's set
+    const savedDarkMode = localStorage.getItem("darkMode") === "true";
 
-    // Add listener to detect system theme change
-    const mediaQueryList = window.matchMedia('(prefers-color-scheme: dark)');
-    const handleChange = (e) => setIsDarkMode(e.matches);
-    mediaQueryList.addListener(handleChange);
+    // If no saved preference, use system preference
+    const initialDarkMode = savedDarkMode || systemPreference;
 
-    // Cleanup the listener on component unmount
-    return () => mediaQueryList.removeListener(handleChange);
+    setIsDarkMode(initialDarkMode);
+
+    // Apply the initial theme to body
+    document.body.classList.toggle("dark-mode", initialDarkMode);
   }, []);
+
+  useEffect(() => {
+    // Event listener to close sidebar if the user clicks outside of it
+    const handleClickOutside = (event) => {
+      if (sidebarRef.current && !sidebarRef.current.contains(event.target)) {
+        setSidebarOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    // Cleanup listener on unmount
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
+  const toggleDarkMode = () => {
+    const newDarkModeState = !isDarkMode;
+    setIsDarkMode(newDarkModeState);
+
+    // Update body class for dark mode
+    document.body.classList.toggle("dark-mode", newDarkModeState);
+
+    // Save preference to localStorage
+    localStorage.setItem("darkMode", newDarkModeState);
+  };
 
   const handleClick = (index, section) => {
     setActiveIndex(index);
@@ -35,15 +71,15 @@ const Navbar = ({ onScrollToSection }) => {
 
   return (
     <>
-      <div className={`nav ${isDarkMode ? 'dark' : ''}`}>
-        {/* Hamburger Menu for Mobile */}
+      <div className={`nav ${isDarkMode ? "dark" : ""}`}>
+        {/* Hamburger Menu */}
         <div className="hamburger" onClick={toggleSidebar}>
-          <div className="line"></div>
-          <div className="line"></div>
-          <div className="line"></div>
+          <div className={`line-${mode}`}></div>
+          <div className={`line-${mode}`}></div>
+          <div className={`line-${mode}`}></div>
         </div>
 
-        {/* Main Navigation for Desktop */}
+        {/* Main Navigation */}
         <div className="list">
           <ul>
             <li
@@ -79,25 +115,34 @@ const Navbar = ({ onScrollToSection }) => {
           </ul>
         </div>
 
-        {/* Social Media Links */}
+        {/* Social Media Links and Dark Mode Toggle */}
         <div className="links">
-          <a id="github" href="">
-            <img className="icon" src={github} alt="" />
+          <a href="" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <img className="icon" src={github} alt="GitHub" />
           </a>
-          <a id="linkedin" href="">
-            <img className="icon" src={linkedin} alt="" />
+          <a href="" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <img className="icon" src={linkedin} alt="LinkedIn" />
           </a>
-          <a id="instagram" href="">
-            <img className="icon" src={instagram} alt="" />
+          <a href="" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <img className="icon" src={instagram} alt="Instagram" />
           </a>
-          <a id="x" href="">
-            <img className="icon" src={x} alt="" />
+          <a href="" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+            <img className="icon" src={x} alt="Twitter" />
           </a>
+          <button style={{ border: "none", background: "transparent" }} onClick={() => {
+    toggleMode();
+    toggleDarkMode();
+  }}>
+            <img className="icon" src={isDarkMode ? light : dark} alt="Theme Toggle" />
+          </button>
         </div>
       </div>
 
       {/* Sidebar */}
-      <div className={`sidebar ${isSidebarOpen ? "open" : ""}`}>
+      <div
+        ref={sidebarRef}
+        className={`sidebar ${isSidebarOpen ? "open" : ""} ${isDarkMode ? "dark" : ""}`}
+      >
         <ul className="sidebar-list">
           <li
             className={`item ${activeIndex === 0 ? "active" : ""}`}
@@ -133,7 +178,12 @@ const Navbar = ({ onScrollToSection }) => {
       </div>
 
       {/* Overlay */}
-      {isSidebarOpen && <div className="overlay" onClick={toggleSidebar}></div>}
+      {isSidebarOpen && (
+        <div
+          className={`overlay ${isDarkMode ? "dark" : ""}`}
+          onClick={toggleSidebar}
+        ></div>
+      )}
     </>
   );
 };

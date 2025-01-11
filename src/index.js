@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useState,useRef, useEffect } from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import Navbar from './Components/Navbar';
@@ -7,6 +7,7 @@ import AboutUs from './Components/AboutUs';
 import Projects from './Components/Projects';
 import Services from './Components/Services';
 import Contact from './Components/Contact';
+import Footer from './Components/Footer';
 
 const App = () => {
   const HomeRef= useRef(null);
@@ -28,24 +29,60 @@ const App = () => {
     }
   };
 
+  const [mode, setmode] = useState(() => {
+    // Check if the system prefers dark mode
+    const systemPreference = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    return systemPreference ? "dark" : "light"; // Default to 'dark' if system preference is dark
+  });
+
+  useEffect(() => {
+    // Apply the initial theme on load
+    document.body.style.backgroundColor = mode === "dark" ? "black" : "white";
+  }, [mode]); // Update body background color when the mode changes
+
+  const toggleMode = () => {
+    if (mode === "light") {
+      setmode("dark");
+      document.body.style.backgroundColor = "black";
+    } else {
+      setmode("light");
+      document.body.style.backgroundColor = "white";
+    }
+  };
+
   return (
     <>
-      <Navbar onScrollToSection={scrollToSection} />
+      <Navbar 
+      onScrollToSection={scrollToSection} 
+      mode={mode}
+      toggleMode={toggleMode}
+      />
 
       <div ref={HomeRef}>
-        <Home />
+        <Home
+        mode={mode}
+        />
       </div>
       <div ref={aboutUsRef}>
         <AboutUs />
       </div>
       <div ref={projectsRef}>
-        <Projects />
+        <Projects 
+        mode={mode}
+        />
       </div>
       <div ref={servicesRef}>
-        <Services />
+        <Services 
+          mode={mode}
+        />
       </div>
       <div ref={contactRef}>
-        <Contact />
+        <Contact 
+        mode={mode}
+        />
+        <Footer
+        mode={mode}
+        />
       </div>
     </>
   );

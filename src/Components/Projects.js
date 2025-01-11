@@ -2,7 +2,7 @@ import React from 'react'
 import portImage from './images/portfolio.webp'
 import Carousel from './Carousel'
 
-const Services = () => {
+const Services = (props) => {
   return (
     
     <>
@@ -47,7 +47,9 @@ const Services = () => {
             </div>
         </div>
     </div>
-    <Carousel/>
+    <Carousel
+    mode={props.mode}
+    />
     </>
   )
 }

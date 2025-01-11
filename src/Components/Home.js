@@ -1,25 +1,25 @@
-import React, {useState} from 'react'
 import profile from './images/profile.png'
 import './CSS/Style.css'
 import apple from './icons/apple.svg'
 import mouse from './icons/mouse.svg'
 import arrow from './icons/arrow_down.svg'
+import './CSS/Dark.css'
 
-const Home = () => {
+const Home = (props) => {
 
   return (
     <>
-    <div className="intro">
+    <div className={`intro  `}>
         <div className="body">
             <div className="text">
                 <p style={{fontSize: 30,color: 'rgb(94, 99, 99)'}}>Hello there</p>
                 <h1 style={{fontSize: 55}}>I'm Shahid here!</h1>
-                <div className='body-apple'>
+                <div className={`body-apple body-apple-${props.mode}`} >
                     <img src={apple} style={{width:30,height:30,marginTop: 5, marginRight: 10}} className='' alt="" />
-                    <p style={{fontSize: 30,color: 'rgb(94, 99, 99)'} }>Senior IOS Engineer</p>
+                    <p style={{fontSize: 30} }>Senior IOS Engineer</p>
                 </div>
                 <p style={{fontSize: 20,color: 'rgb(94, 99, 99)', marginTop: 30}}>I’ve 8+ years of experience in iOS technologies. Super passionate about beautiful UI and intuitive UX design. I believe in high quality, simplicity, collaboration, and tight feedback loops.</p>
-                <button style={{fontSize: 24}} className='body-txt-btn'>Let’s discuss your project with $0</button>
+                <button style={{fontSize: 24}} className={`body-txt-btn body-txt-btn-${props.mode}`}>Let’s discuss your project with $0</button>
             </div>
             <div className="body-pic">
                 <img src={profile} className='profile' alt="" />

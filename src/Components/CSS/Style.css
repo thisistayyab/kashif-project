@@ -101,7 +101,7 @@
   margin-left: 20px;
 }
 
-.line {
+.line-light {
   width: 25px;
   height: 3px;
   background: black;
@@ -165,7 +165,6 @@
     display: flex; /* Show hamburger menu */
   }
 }
-
 
 .intro{
     margin-top: 7%;
@@ -272,7 +271,9 @@
     margin: 5% 10%;
     gap: 20px; 
   }
-
+  .body-apple{
+    justify-content: center;
+  }
   .bio-data {
     text-align: center; /* Ensure proper alignment */
   }
@@ -374,7 +375,6 @@
 .port-body {
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap; /* Allows wrapping of items for mobile */
 }
 
 .project {
@@ -425,13 +425,13 @@
   }
 }
 /* Main Slider Container */
-.slider {
+.slider-light {
   margin-top: 5%;
   background-color: #f9f9f9;
 }
 
 /* Slider Container - Ensures the slider takes full width and is centered */
-.slider-container {
+.slider-container-light {
   position: relative;
   width: 80%;
   background-color: #f9f9f9;
@@ -466,7 +466,7 @@
 }
 
 /* Icon styling for navigation arrows */
-.slider-icon {
+.slider-icon-light {
   filter: brightness(0) invert(1);
   width: 30px;
   height: 30px;
@@ -499,13 +499,15 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background-color: #000000;
   border: none;
   padding: 17px 20px;
   cursor: pointer;
   border-radius: 50%;
   font-size: 25px;
   z-index: 10;
+}
+.btn-light{
+  background-color: #000000;
 }
 
 .prev-btn {
@@ -540,11 +542,11 @@
   justify-content: center;
   align-items: center;
   gap: 10px;
-  margin-bottom: 5%;
+  padding-bottom: 6%;
 }
 
 /* Dot styles for active and inactive dots */
-.dot {
+.dot-light {
   width: 7px;
   height: 7px;
   border-radius: 50%;
@@ -553,7 +555,7 @@
   transition: background-color 0.3s, transform 0.3s;
 }
 
-.dot.active-dot {
+.dot-light.active-dot {
   background-color: #000000;
   width: 30px;
   height: 10px;
@@ -564,10 +566,7 @@
 /* Quote Icon Styling */
 .quote {
   fill: gray;
-}
-
-.quote-svg {
-  fill: aquamarine;
+  margin-bottom: 4%;
 }
 
 /* Responsive Design for Smaller Screens */
@@ -575,8 +574,8 @@
 /* Mobile Styles */
 @media (max-width: 768px) {
   /* Ensure the slider content is centered and the image sizes are adapted */
-  .slider-container {
-    width: 95%; /* Make the slider container take more width on mobile */
+  .slider-container-light {
+    width: 100%; /* Make the slider container take more width on mobile */
     padding: 10px;
   }
 
@@ -598,8 +597,7 @@
   /* Adjust arrow buttons for mobile */
   .prev-btn,
   .next-btn {
-    padding: 12px;
-    font-size: 20px;
+    display: none;
   }
 
   /* Stack profile and text vertically */
@@ -656,18 +654,18 @@
   color: #333;
 }
 
-.skills-head {
+.skills-head-light {
   text-align: center;
   margin-bottom: 30px;
 }
 
-.skills-head h1 {
+.skills-head-light h1 {
   font-size: 2.5rem;
   color: #222;
   margin-bottom: 10px;
 }
 
-.skills-head p {
+.skills-head-light p {
   font-size: 1rem;
   color: #555;
 }
@@ -682,7 +680,7 @@
   
 }
 
-.individual-skill {
+.individual-skill-light {
   margin: 10px 8px;
   display: inline-block;
   padding: 15px 20px;
@@ -698,7 +696,7 @@
   white-space: nowrap; 
 }
 
-.individual-skill:hover {
+.individual-skill-light:hover {
   transform: scale(1.05);
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
@@ -852,7 +850,7 @@
   }
 }
 
-.footer{
+.footer-light{
   background-color: #dadada;
   height: 50vh;
 }
@@ -864,7 +862,7 @@
 .footer-link{
   text-decoration: none;
   font-size: 20px;
-  color: rgb(75, 75, 75);
+  color: rgb(122, 122, 122);
 }
 .footer-body-left{
   margin-top: 4%;
@@ -876,7 +874,7 @@
 .footer-body-right{
   margin-top: 4%;
 }
-.footer-bottom{
+.footer-bottom-light{
   display: flex;
   justify-content: space-between;
   text-align: center;
@@ -893,8 +891,9 @@
   margin-right: 7%;
 }
 
-.footer-icon{
+.footer-icon-light{
   margin-left: 9px;
+  filter: brightness(1) invert(0);
 }
 .footer-icon:hover{
   transform: scale(1.05);
@@ -902,11 +901,11 @@
   border-radius: 80px;
 }
 .icon-container {
-  background-color: black;
   padding: 10px;
   margin-right: 9px;
   border: none;
   border-radius: 50px;
+  background-color: black;
 }
 .icon-container:hover{
   background: rgb(58, 58, 58);
@@ -919,7 +918,7 @@
   border-radius: 80px;
 }
 
-.download-icon{
+.download-icon-light{
   filter: invert(1);
   width: 30px;
   height: 30px;
@@ -929,48 +928,19 @@
   margin-bottom: 4%;
 }
 
-/* Responsive Design */
-@media screen and (max-width: 1200px) {
-  .footer-body {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .footer-body-left,
-  .footer-body-right {
-    margin-top: 20px;
-    width: 100%; /* Ensures these sections take the full width */
-  }
-
-  .footer-bottom {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .footer-bottom-div1 {
-    width: 100%;
-    justify-content: center;
-  }
-
-  .footer-icon {
-    width: 25px;
-    height: 25px;
-    margin-left: 5px;
-  }
-}
-
 @media screen and (max-width: 768px) {
-  .footer{
+  .footer {
     text-align: center;
+    padding: 10px; /* Add some padding for better spacing */
   }
+
   .footer-body {
     flex-direction: column;
-    text-align: center;
     margin: 2% 5%;
   }
 
   .footer-link {
-    font-size: 18px;
+    font-size: 18px; /* Adjust text size for better readability */
   }
 
   .footer-body-left,
@@ -978,67 +948,30 @@
     margin-top: 10px;
     width: 100%;
     text-align: center;
-    align-items: center;
   }
 
-  .footer-bottom {
-    flex-direction: column;
-    align-items: center;
+  .footer-bottom-light {
+    display: block;
     text-align: center;
+    margin-top: 20px;
   }
 
-  .footer-bottom-div1 {
-    margin-top: 3%;
-    margin-bottom: 10px;
-    width: 100%;
+  .footer-bottom-div1,
+  .footer-bottom-div2,
+  .footer-bottom-div3 {
+    width: 100%; /* Each div takes full width */
+    text-align: center; /* Center-align content */
+    margin-bottom: 10px; /* Add spacing between rows */
     justify-content: center;
   }
 
   .footer-icon {
     width: 25px;
     height: 25px;
+    margin: 5px; /* Add spacing between icons */
   }
 
   .footer-bottom-div2 {
-    font-size: 18px;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .footer-body {
-    flex-direction: column;
-    text-align: center;
-    margin: 2% 3%;
-  }
-
-  .footer-link {
-    font-size: 16px;
-  }
-
-  .footer-body-left,
-  .footer-body-right {
-    margin-top: 10px;
-    width: 100%;
-  }
-
-  .footer-bottom {
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-  }
-
-  .footer-bottom-div1 {
-    margin-bottom: 15px;
-    width: 100%;
-    justify-content: center;
-  }
-
-  .footer-icon {
-    width: 20px;
-    height: 20px;
-  }
-
-  .footer-bottom-div2 {
-    font-size: 16px;
+    font-size: 18px; /* Adjust font size for the copyright text */
   }
 }

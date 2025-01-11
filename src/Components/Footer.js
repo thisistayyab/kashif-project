@@ -4,10 +4,10 @@ import linkedin from './icons/linkedin.svg'
 import instagram from './icons/instagram.svg'
 import x from './icons/x.svg'
 import download from './icons/download.svg'
-const Footer = () => {
+const Footer = (props) => {
   return (
     <>
-    <div className='footer'>
+    <div className={`footer-${props.mode}`}>
         <div className="footer-body">
             <div className="footer-body-left">
                 <h1>Main Page</h1>
@@ -37,24 +37,24 @@ const Footer = () => {
                 </div>
             </div>
         </div>
-        <div className="footer-bottom">
+        <div className={`footer-bottom-${props.mode}`}>
             <div className="footer-bottom-div1">
-                <button className='icon-container'>
-                    <img className='download-icon' src={download} alt="" />
+                <button className={`icon-container icn-${props.mode}`}>
+                    <img className={`download-icon-${props.mode}`} src={download} alt="" />
                     </button>
                 <div style={{textAlign:'left'}}>
-                    <p className='footer-link'>My Deck</p>
-                    <p className='footer-link'>PDF, 3MB</p>
+                    <p className={`footer-link txt-${props.mode}`}>My Deck</p>
+                    <p className={`footer-link txt-${props.mode}`}>PDF, 3MB</p>
                 </div>
             </div>
             <div className="footer-bottom-div2">
-                    <span className='footer-link'  style={{fontSize:20}}>&copy; 2024 Shahid. All rights reserved.</span>
+                    <span className={`footer-link txt-${props.mode}`}  style={{fontSize:20}}>&copy; 2024 Shahid. All rights reserved.</span>
             </div>
             <div className="footer-bottom-div3">
-                <img className='footer-icon' style={{width:30, height: 30}} src={github} alt="" />
-                <img className='footer-icon' style={{width:30, height: 30}} src={linkedin} alt="" />
-                <img className='footer-icon' style={{width:30, height: 30}} src={instagram} alt="" />
-                <img className='footer-icon' style={{width:30, height: 30}} src={x} alt="" />
+                <img className={`footer-icon-${props.mode}`} style={{width:30, height: 30}} src={github} alt="" />
+                <img className={`footer-icon-${props.mode}`} style={{width:30, height: 30}} src={linkedin} alt="" />
+                <img className={`footer-icon-${props.mode}`} style={{width:30, height: 30}} src={instagram} alt="" />
+                <img className={`footer-icon-${props.mode}`} style={{width:30, height: 30}} src={x} alt="" />
             </div>
         </div>
     </div>

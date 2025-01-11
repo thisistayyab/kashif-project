@@ -1,7 +1,6 @@
 import React from 'react'
-import Footer from './Footer'
 
-const contact = () => {
+const contact = (props) => {
   return (
     <>
     <div className="form-container">
@@ -18,11 +17,10 @@ const contact = () => {
                     <textarea className='form-input from-textbox'  placeholder='Enter your project details*' name="project-details" id=""></textarea>
             </div>
             <div className="form-button-main">
-            <button className='form-button'>Send project details</button>
+            <button className={`form-button body-txt-btn-${props.mode}`}>Send project details</button>
             </div>
         </form>
     </div>
-    <Footer/>
     </>
   )
 }

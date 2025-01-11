@@ -1,0 +1,187 @@
+
+/* Dark mode styles */
+body.dark-mode {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.nav.dark {
+    background: #000000;
+}
+
+.nav.dark .item {
+    color: #ffffff;
+}
+
+.nav.dark .item.active::after {
+    background-color: #ffffff;
+}
+
+.nav.dark .links .icon {
+    filter: invert(1); /* Inverts the icons to appear suitable for dark mode */
+}
+
+.line-dark {
+    width: 25px;
+    height: 3px;
+    background: rgb(255, 255, 255);
+    transition: all 0.3s ease;
+  }
+
+.sidebar.dark {
+    background: #1a1a1a;
+}
+
+.sidebar.dark .item {
+    color: #ffffff;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Overlay in dark mode */
+.overlay.dark {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+
+  .body-txt-btn-dark {
+    background-color: yellow; 
+    color: rgb(0, 0, 0); 
+  }
+  
+  .body-text-dark {
+    color: white;
+    font-size: 30;
+  }
+  
+  .body-apple-dark img {
+    filter: brightness(0) invert(1); /* Apple logo turns white in dark mode */
+  }
+  
+  body.dark .bio-info {
+    color: white; /* Bio info text color turns white in dark mode */
+  }
+
+  .slider-dark {
+    margin-top: 5%;
+    background-color: #080808;
+  }
+  .slider-container-dark {
+    position: relative;
+    width: 80%;
+    background-color: #080808;
+    margin: auto;
+    overflow: hidden;
+    text-align: center;
+    align-items: center;
+    padding: 20px;
+  }
+  @media (max-width: 768px) {
+    /* Ensure the slider content is centered and the image sizes are adapted */
+    .slider-container-dark {
+      width: 100%; /* Make the slider container take more width on mobile */
+      padding: 10px;
+    }
+}
+.btn-dark{
+    background-color: #ffffff;
+}
+.slider-icon-dark {
+    filter: brightness(1) invert(0);
+    width: 30px;
+    height: 30px;
+  }
+  .dot-dark {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: #3d3d3d;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  .dot-dark.active-dot {
+    background-color: #ffffff;
+    width: 30px;
+    height: 10px;
+    border-radius: 30px;
+    transform: scale(1.2);
+  }
+
+  .individual-skill-dark {
+    margin: 10px 8px;
+    display: inline-block;
+    padding: 15px 20px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #ffffff;
+    background: rgb(26, 26, 26);
+    border-radius: 50px;
+    text-align: center;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+    white-space: nowrap; 
+  }
+  .individual-skill-dark:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .skills-head-dark {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .skills-head-dark h1 {
+    font-size: 2.5rem;
+    color: #ffffff;
+    margin-bottom: 10px;
+  }
+  
+  .skills-head-dark p {
+    font-size: 1rem;
+    color: #ffffff;
+  }
+  .footer-dark{
+    background-color: #080808;
+    height: 50vh;
+  }
+  .footer-bottom-dark{
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+    background-color: #080808;
+    color: white;
+  }
+  .footer-icon-dark{
+    margin-left: 9px;
+    filter: invert(1); 
+  }
+  .txt-dark{
+    color: white;
+  }
+  .download-icon-dark {
+    width: 30px;
+    height: 30px;
+  }
+  .icn-dark{
+    background-color: yellow;
+  }
+
+  @media screen and (max-width: 768px) {
+    .footer-bottom-dark {
+      display: flex;
+      flex-direction: column; /* Stack child divs vertically */
+      align-items: center; /* Center align all child elements */
+      text-align: center;
+      gap: 10px; /* Add spacing between child divs */
+      margin-top: 20px;
+      
+    }
+
+  }
+  
+  .quote-svg-dark {
+    filter: invert(1);
+  }
+  
