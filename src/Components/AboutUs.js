@@ -27,7 +27,9 @@ const AboutUs = (props) => {
           </div>
       </div>
     </div>
-    <Roadmap/>
+    <Roadmap
+    mode={props.mode}
+    />
     </>
   )
 }
