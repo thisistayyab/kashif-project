@@ -3,16 +3,24 @@ import './CSS/Style.css'
 import apple from './icons/apple.svg'
 import mouse from './icons/mouse.svg'
 import arrow from './icons/arrow_down.svg'
+import hello from './icons/hello.svg'
 import './CSS/Dark.css'
 
 const Home = (props) => {
 
   return (
     <>
+    <div className={`glow-${props.mode}`}>
+        <div className={`yellow-effect-${props.mode}`}>
+
+        </div>
+    </div>
     <div className={`intro  `}>
         <div className="body">
             <div className="text">
-                <p style={{fontSize: 30,color: 'rgb(94, 99, 99)'}}>Hello there</p>
+                <p style={{fontSize: 30,color: 'rgb(94, 99, 99)', alignItems:'center', display:'flex'}}>Hello there
+                    <img className='icon' src={hello} alt="" />
+                </p>
                 <h1 style={{fontSize: 55}}>I'm Shahid here!</h1>
                 <div className={`body-apple body-apple-${props.mode}`} >
                     <img src={apple} style={{width:30,height:30,marginTop: 5, marginRight: 10}} className='' alt="" />
@@ -26,10 +34,13 @@ const Home = (props) => {
             </div>
         </div>
             <div className="intro-label">
+                <div className={`blue-effect-${props.mode}`}>
+
+                </div>
                 <div className="intro-scroll">
-                    <img  style={{width:20,height:20, marginRight:5}} src={mouse} alt="" />
+                    <img className={`icon-${props.mode}`}  style={{width:20,height:20, marginRight:5}} src={mouse} alt="" />
                     <p>Scroll down</p>
-                    <img style={{width:10,height:10, marginLeft:5}} src={arrow} alt="" />
+                    <img className={`icon-${props.mode}`} style={{width:10,height:10, marginLeft:5}} src={arrow} alt="" />
                 </div>
             </div>
     </div>

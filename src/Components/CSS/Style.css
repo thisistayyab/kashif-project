@@ -3,10 +3,52 @@
     padding: 0;
 }
 
+html, body {
+  overflow-x: hidden;
+  overflow-y: auto;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  height: 100%;
+}
+
+
+@media (max-width: 768px) {
+  .intro, .about, .bio-info, .roadmap, .port-body {
+      margin: 0 auto; 
+      padding: 0 5%;  
+  }
+
+  .profile, .about-img {
+      max-width: 100%; 
+      height: auto;   
+  }
+
+  .nav, .sidebar {
+      width: 100%; 
+  }
+}
+
+
+body {
+  font-family: 'Poppins', 'Raleway', sans-serif;
+  background: var(--background-color);
+  color: var(--text-color);
+  transition: background 1s ease, color 0.9s ease; 
+  overflow-x: hidden;
+}
+
+h1, h2, h3 {
+  font-family: 'Poppins', sans-serif; 
+}
+
+p, span, div {
+  font-family: 'Raleway', sans-serif; 
+}
+
 .nav{
     height: 80px;
     display: flex;
-    background: rgb(253, 253, 253);
     justify-content: space-between;
     align-items: center;
     position: sticky;
@@ -92,6 +134,10 @@
     width: 30px;
 }
 
+.glow-light{
+  height: 100px;
+}
+
 /* Hamburger Menu */
 .hamburger {
   display: none; /* Hidden by default */
@@ -139,9 +185,8 @@
   cursor: pointer;
 }
 
-/* Overlay */
 .overlay {
-  display: none; /* Hidden by default */
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -152,24 +197,23 @@
 }
 
 .overlay.show {
-  display: block; /* Show overlay when active */
+  display: block; 
 }
 
-/* Media Query for Mobile */
 @media (max-width: 768px) {
   .list {
     display: none; /* Hide desktop nav on mobile */
   }
 
   .hamburger {
-    display: flex; /* Show hamburger menu */
+    display: flex; 
   }
 }
 
 .intro{
-    margin-top: 7%;
-    margin-left: 5%;
-    margin-right: 5%;
+    margin-left: 6%;
+    margin-right: 6%;
+    align-items: center;
 }
 
 .body{
@@ -183,8 +227,8 @@
 }
 
 .profile{
-    width: 512px;
-    height: 512px;
+    width: 412px;
+    height: 412px;
 }
 
 .body-apple{
@@ -207,8 +251,8 @@
 }
 .intro-label{
     display: flex;
-    justify-content: end;
-    margin-right: 130px;
+    justify-content: space-between;
+    margin-right: 70px;
 }
 .intro-scroll{
     display: flex;
@@ -248,14 +292,16 @@
   .profile {
     width: 250px; /* Reduce profile image size */
     height: 250px;
-    margin: 20px auto; /* Center-align image */
+    margin: 20px auto; 
   }
 
   .body-txt-btn {
-    padding: 10px 30px; /* Adjust padding for smaller screens */
+    padding: 10px 30px;
     font-size: 20px;
   }
-
+  .blue-effect-dark {
+    display: none;
+  }
   .intro-label {
     margin-right: 0;
     justify-content: center; /* Center the scroll label */
@@ -303,7 +349,7 @@
 }
 .about-img{
     width: 520px;
-    height: 680px;
+    height: 580px;
     border-radius: 40px;
 }
 .about-text{
@@ -381,6 +427,13 @@
   margin: 40px 15px;
   align-items: center;
   flex: 0 0 48%; /* Ensures each project takes 48% of the width, with space between */
+}
+
+.project:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 80px;
 }
 
 .portfolio {
@@ -772,42 +825,22 @@
 }
 
 /* Responsive Design */
-@media screen and (max-width: 1200px) {
-  .form-container {
-    margin: 2% 5% 5% 5%;
-  }
-
-  .form-input {
-    font-size: 28px;
-    padding: 15px;
-  }
-
-  .form-button {
-    padding: 12px 20px;
-    font-size: 18px;
-  }
-
-  .form-body {
-    flex-direction: column;
-  }
-
-  .form-input {
-    margin-top: 5%;
-  }
-
-  .form-button-main {
-    justify-content: center;
-  }
-}
-
 @media screen and (max-width: 768px) {
+  body {
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+  }
+
   .form-container {
-    margin: 2% 3% 5% 3%;
+    margin: 2% 3% 5% 3%; /* Adjust margins */
+    width: 100%; /* Ensure the container fits within the screen */
+    box-sizing: border-box; /* Prevent overflow by including padding in width calculation */
   }
 
   .form-input {
     font-size: 24px;
     padding: 12px;
+    width: 100%; /* Ensure inputs take full available width */
+    box-sizing: border-box;
   }
 
   .form-button {
@@ -818,6 +851,8 @@
   .form-body {
     flex-direction: column;
     gap: 20px;
+    width: 100%; /* Ensure body elements stay within the container */
+    box-sizing: border-box;
   }
 
   .form-button-main {
@@ -825,30 +860,6 @@
   }
 }
 
-@media screen and (max-width: 480px) {
-  .form-container {
-    margin: 2% 1% 5% 1%;
-  }
-
-  .form-input {
-    font-size: 20px;
-    padding: 10px;
-  }
-
-  .form-button {
-    padding: 10px 15px;
-    font-size: 16px;
-  }
-
-  .form-body {
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  .form-button-main {
-    justify-content: center;
-  }
-}
 
 .footer-light{
   background-color: #dadada;

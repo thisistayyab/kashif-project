@@ -6,12 +6,20 @@ import x from "./icons/x.svg";
 import dark from "./icons/dark.svg";
 import light from "./icons/light.svg";
 import "./CSS/Style.css";
-import "./CSS/Dark.css"
+import "./CSS/Dark.css";
 
 const Navbar = ({ onScrollToSection, toggleMode, mode }) => {
   const [activeIndex, setActiveIndex] = useState(0); // Default active index
   const [isSidebarOpen, setSidebarOpen] = useState(false); // Sidebar state
   const [isDarkMode, setIsDarkMode] = useState(false); // Dark mode state
+
+  const sectionRefs = {
+    home: useRef(null),
+    aboutUs: useRef(null),
+    projects: useRef(null),
+    services: useRef(null),
+    contact: useRef(null),
+  };
 
   // Create a ref for the sidebar to check if the click is inside it
   const sidebarRef = useRef(null);
@@ -19,7 +27,7 @@ const Navbar = ({ onScrollToSection, toggleMode, mode }) => {
   useEffect(() => {
     // Check the system's theme preference initially
     const systemPreference = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    
+
     // Load dark mode state from localStorage if it's set
     const savedDarkMode = localStorage.getItem("darkMode") === "true";
 
@@ -30,6 +38,27 @@ const Navbar = ({ onScrollToSection, toggleMode, mode }) => {
 
     // Apply the initial theme to body
     document.body.classList.toggle("dark-mode", initialDarkMode);
+
+    // Add scroll event listener to update active index on scroll
+    const handleScroll = () => {
+      const currentSection = Object.keys(sectionRefs).find((key) => {
+        const section = sectionRefs[key].current;
+        if (section) {
+          const { top, bottom } = section.getBoundingClientRect();
+          return top <= window.innerHeight / 2 && bottom >= window.innerHeight / 2;
+        }
+        return false;
+      });
+      if (currentSection) {
+        const index = Object.keys(sectionRefs).indexOf(currentSection);
+        setActiveIndex(index);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   useEffect(() => {
@@ -130,9 +159,9 @@ const Navbar = ({ onScrollToSection, toggleMode, mode }) => {
             <img className="icon" src={x} alt="Twitter" />
           </a>
           <button style={{ border: "none", background: "transparent" }} onClick={() => {
-    toggleMode();
-    toggleDarkMode();
-  }}>
+            toggleMode();
+            toggleDarkMode();
+          }}>
             <img className="icon" src={isDarkMode ? light : dark} alt="Theme Toggle" />
           </button>
         </div>

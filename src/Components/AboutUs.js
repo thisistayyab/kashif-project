@@ -1,7 +1,8 @@
 import React from 'react'
 import './CSS/Style.css'
 import aboutImage from './images/about-img.jpg'
-const AboutUs = () => {
+import Roadmap from './Roadmap'
+const AboutUs = (props) => {
   return (
     <>
     <div className="about">
@@ -26,22 +27,7 @@ const AboutUs = () => {
           </div>
       </div>
     </div>
-    <div className="roadmap">
-      <div>
-          <div className="roadmap-text">
-            <h1 style={{fontSize: 50}}>Roadmap</h1>
-            <p style={{fontSize: 35}}>How the Process Works</p>
-          </div>
-      </div>
-      <div className="roadmap-main">
-        <div className="consultation"></div>
-        <div className="planing"></div>
-        <div className="development"></div>
-        <div className="testing"></div>
-        <div className="deployment"></div>
-        <div className="support"></div>
-      </div>
-    </div>
+    <Roadmap/>
     </>
   )
 }
