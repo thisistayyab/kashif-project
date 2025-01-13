@@ -1,9 +1,11 @@
 {
   "files": {
-    "main.css": "/kashif-project/static/css/main.57583190.css",
-    "main.js": "/kashif-project/static/js/main.73b24c92.js",
+    "main.css": "/kashif-project/static/css/main.2a0f781d.css",
+    "main.js": "/kashif-project/static/js/main.de681143.js",
     "static/media/about-img.jpg": "/kashif-project/static/media/about-img.bf8560df93eb1f1dba2e.jpg",
     "static/media/hello.svg": "/kashif-project/static/media/hello.4f3d64c099852add63e4cbe9540a2349.svg",
+    "static/media/road-dark.png": "/kashif-project/static/media/road-dark.2682f785f7dc75914853.png",
+    "static/media/road-light.png": "/kashif-project/static/media/road-light.5392253e72a9fde3c1b7.png",
     "static/media/portfolio.webp": "/kashif-project/static/media/portfolio.fb854c30b724bab70fc7.webp",
     "static/media/profile.png": "/kashif-project/static/media/profile.af6699f1e23a021acf4a.png",
     "static/media/instagram.svg": "/kashif-project/static/media/instagram.ef15be82f3869bb7096aa13933b0460a.svg",
@@ -20,11 +22,11 @@
     "static/media/dark.svg": "/kashif-project/static/media/dark.01d0feddcec0fe5ce9548fc2ceaf656a.svg",
     "static/media/rightarrow.svg": "/kashif-project/static/media/rightarrow.8f557680dd0374f5fd7c9e03ab97b42c.svg",
     "static/media/leftarrow.svg": "/kashif-project/static/media/leftarrow.448682c6a60aa397db2a68ad1f5b9903.svg",
-    "main.57583190.css.map": "/kashif-project/static/css/main.57583190.css.map",
-    "main.73b24c92.js.map": "/kashif-project/static/js/main.73b24c92.js.map"
+    "main.2a0f781d.css.map": "/kashif-project/static/css/main.2a0f781d.css.map",
+    "main.de681143.js.map": "/kashif-project/static/js/main.de681143.js.map"
   },
   "entrypoints": [
-    "static/css/main.57583190.css",
-    "static/js/main.73b24c92.js"
+    "static/css/main.2a0f781d.css",
+    "static/js/main.de681143.js"
   ]
 }
