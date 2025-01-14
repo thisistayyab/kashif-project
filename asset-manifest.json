@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/kashif-project/static/css/main.5aa17d4b.css",
-    "main.js": "/kashif-project/static/js/main.c171e2b4.js",
-    "static/media/8.png": "/kashif-project/static/media/8.c2c4c4a1b46cd2899569.png",
-    "static/media/11.png": "/kashif-project/static/media/11.99fd558b971c0677c6cb.png",
-    "static/media/7.png": "/kashif-project/static/media/7.8c14614977cc780cb337.png",
-    "static/media/9.png": "/kashif-project/static/media/9.626866292438608ac054.png",
-    "static/media/13.png": "/kashif-project/static/media/13.85c24cf273b77e264bee.png",
-    "static/media/2.png": "/kashif-project/static/media/2.230813d4ecca3bda85f5.png",
-    "static/media/12.png": "/kashif-project/static/media/12.9396b3d2fd4d5cb056d3.png",
-    "static/media/6.png": "/kashif-project/static/media/6.865665d9a68711cd2ca5.png",
-    "static/media/5.png": "/kashif-project/static/media/5.93c2afad0c54ef8b425b.png",
-    "static/media/10.png": "/kashif-project/static/media/10.5816aa0221e756bdfb07.png",
-    "static/media/3.png": "/kashif-project/static/media/3.28e2ad596ed3b7476a67.png",
-    "static/media/4.png": "/kashif-project/static/media/4.f3eae1a187989fa39565.png",
-    "static/media/1.png": "/kashif-project/static/media/1.6e87ae7eede69aece721.png",
+    "main.css": "/kashif-project/static/css/main.7a373be7.css",
+    "main.js": "/kashif-project/static/js/main.862cc4fd.js",
     "static/media/about-img.jpg": "/kashif-project/static/media/about-img.bf8560df93eb1f1dba2e.jpg",
     "static/media/hello.svg": "/kashif-project/static/media/hello.4f3d64c099852add63e4cbe9540a2349.svg",
     "static/media/road-dark.png": "/kashif-project/static/media/road-dark.945100df607df6224f97.png",
     "static/media/road-light.png": "/kashif-project/static/media/road-light.090f23a2253d98d5db30.png",
+    "static/media/7.webp": "/kashif-project/static/media/7.b48f07b2e79956dcafa9.webp",
+    "static/media/2.webp": "/kashif-project/static/media/2.0c860b00e1fd92392120.webp",
+    "static/media/13.webp": "/kashif-project/static/media/13.e66e9987311076a7dc95.webp",
+    "static/media/11.webp": "/kashif-project/static/media/11.721b5b2dc75e3cd2277c.webp",
+    "static/media/6.webp": "/kashif-project/static/media/6.53abc4ace7a230c713ec.webp",
+    "static/media/4.webp": "/kashif-project/static/media/4.8b67244f8c27a0c4842d.webp",
+    "static/media/9.webp": "/kashif-project/static/media/9.c9fdec9342e7bd2a9961.webp",
+    "static/media/5.webp": "/kashif-project/static/media/5.b459a1e4bfbf87bdc373.webp",
+    "static/media/12.webp": "/kashif-project/static/media/12.9ebe865f00af92a5b5ef.webp",
+    "static/media/1.webp": "/kashif-project/static/media/1.bf17701862e90c1cb61f.webp",
+    "static/media/3.webp": "/kashif-project/static/media/3.df21a1787df88add11e5.webp",
+    "static/media/10.webp": "/kashif-project/static/media/10.84a08351f6e0d9e6ea22.webp",
+    "static/media/8.webp": "/kashif-project/static/media/8.f34307cd4e6ccc059c09.webp",
     "static/media/profile.png": "/kashif-project/static/media/profile.af6699f1e23a021acf4a.png",
     "static/media/instagram.svg": "/kashif-project/static/media/instagram.ef15be82f3869bb7096aa13933b0460a.svg",
     "static/media/github.svg": "/kashif-project/static/media/github.d1bb13ce1a593d82e4c0d821dc7f1b41.svg",
@@ -34,11 +34,11 @@
     "static/media/dark.svg": "/kashif-project/static/media/dark.01d0feddcec0fe5ce9548fc2ceaf656a.svg",
     "static/media/rightarrow.svg": "/kashif-project/static/media/rightarrow.8f557680dd0374f5fd7c9e03ab97b42c.svg",
     "static/media/leftarrow.svg": "/kashif-project/static/media/leftarrow.448682c6a60aa397db2a68ad1f5b9903.svg",
-    "main.5aa17d4b.css.map": "/kashif-project/static/css/main.5aa17d4b.css.map",
-    "main.c171e2b4.js.map": "/kashif-project/static/js/main.c171e2b4.js.map"
+    "main.7a373be7.css.map": "/kashif-project/static/css/main.7a373be7.css.map",
+    "main.862cc4fd.js.map": "/kashif-project/static/js/main.862cc4fd.js.map"
   },
   "entrypoints": [
-    "static/css/main.5aa17d4b.css",
-    "static/js/main.c171e2b4.js"
+    "static/css/main.7a373be7.css",
+    "static/js/main.862cc4fd.js"
   ]
 }
