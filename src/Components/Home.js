@@ -18,16 +18,16 @@ const Home = (props) => {
     <div className={`intro  `}>
         <div className="body">
             <div className="text">
-                <p style={{fontSize: 30,color: 'rgb(94, 99, 99)', alignItems:'center', display:'flex'}}>Hello there
-                    <img className='icon' src={hello} alt="" />
+                <p style={{color: 'rgb(94, 99, 99)',fontSize:30,  alignItems:'center'}}>Hello there
+                    <img style={{width:25, height: 25, marginLeft: 10}} src={hello} alt="" />
                 </p>
-                <h1 style={{fontSize: 55}}>I'm Shahid here!</h1>
+                <h1 className='f-55' >I'm Shahid here!</h1>
                 <div className={`body-apple body-apple-${props.mode}`} >
-                    <img src={apple} style={{width:30,height:30,marginTop: 5, marginRight: 10}} className='' alt="" />
-                    <p style={{fontSize: 30} }>Senior IOS Engineer</p>
+                    <img src={apple} style={{width:30,height:30, marginRight: 10}} className='' alt="" />
+                    <p className='f-30' >Senior IOS Engineer</p>
                 </div>
-                <p style={{fontSize: 20,color: 'rgb(94, 99, 99)', marginTop: 30}}>I’ve 8+ years of experience in iOS technologies. Super passionate about beautiful UI and intuitive UX design. I believe in high quality, simplicity, collaboration, and tight feedback loops.</p>
-                <button style={{fontSize: 24}} className={`body-txt-btn body-txt-btn-${props.mode}`}>Let’s discuss your project with $0</button>
+                <p className='p-txt' style={{marginTop: 30}}>I’ve 8+ years of experience in iOS technologies. Super passionate about beautiful UI and intuitive UX design. I believe in high quality, simplicity, collaboration, and tight feedback loops.</p>
+                <button className={`p-txt-btn body-txt-btn body-txt-btn-${props.mode}`}>Let’s discuss your project with $0</button>
             </div>
             <div className="body-pic">
                 <img src={profile} className='profile' alt="" />
@@ -47,19 +47,19 @@ const Home = (props) => {
     <div className="bio-info">
         <div className="age bio-data">
             <h1 style={{fontSize: 50}}>29</h1>
-            <p style={{fontSize: 20}}>Years Old</p>
+            <p className='p-txt'>Years Old</p>
         </div>
         <div className="experience bio-data">
             <h1 style={{fontSize: 50}}>8+</h1>
-            <p style={{fontSize: 20}}>Years Experience</p>
+            <p className='p-txt'>Years Experience</p>
         </div>
         <div className="work bio-data">
             <h1 style={{fontSize: 50}}>18+</h1>
-            <p style={{fontSize: 20}}>Published Apps</p>
+            <p className='p-txt'>Published Apps</p>
         </div>
         <div className="satisfied-clients bio-data">
             <h1 style={{fontSize: 50}}>60</h1>
-            <p style={{fontSize: 20}}>Satisfied Clients</p>
+            <p className='p-txt'>Satisfied Clients</p>
         </div>
     </div>
     </>

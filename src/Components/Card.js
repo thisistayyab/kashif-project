@@ -6,8 +6,8 @@ const Card = (props) => {
   return (
     <>
     <div className="project">
-                <img className='port-image' src={image} alt="" />
-                <h1 style={{fontSize: 30, marginTop:40}}>{name}</h1>
+                <img className='port-image' src={image} alt={name} loading="lazy" />
+                <h1 style={{marginTop:40}}>{name}</h1>
                 <p style={{fontSize: 20 , color: 'rgb(94, 99, 99)'}}>{description}</p>
             </div>
     </>

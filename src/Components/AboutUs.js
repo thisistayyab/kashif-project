@@ -9,15 +9,15 @@ const AboutUs = (props) => {
     <>
     <div className="about">
       <div className="passion">
-        <h1 style={{fontSize: 50}}>About Me</h1>
-        <p style={{fontSize: 25}}>I&lt;code&gt; for passion & design for fun</p>
+        <h1 className='f-55' >About Me</h1>
+        <p className='f-30' >I&lt;code&gt; for passion & design for fun</p>
       </div>
       <div className="about-data">
         <div>
         <img className='about-img' src={aboutImage} alt="" />
         </div>
         <div className="about-text">
-        <p style={{fontSize: 22}}>
+        <p className='f-24' >
         I'm passionate about building high quality mobile apps, focusing on reliability, maintainability, and robust software design patterns.<br/>
         <br/>
         Testing is fundamental in my process, and I'm a strong advocate of Test-Driven Development. TDD is my approach to delivering robust, defect-free software, and it plays a vital role in ensuring code quality and maintainability.<br/>

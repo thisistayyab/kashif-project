@@ -32,7 +32,7 @@ html, body {
 
 
 body {
-  font-family: 'Poppins', 'Raleway', sans-serif;
+  font-family: 'Urbanist', 'Raleway', sans-serif;
   background: var(--background-color);
   color: var(--text-color);
   transition: background 1s ease, color 0.9s ease; 
@@ -40,18 +40,34 @@ body {
 }
 
 h1, h2, h3 {
-  font-family: 'Poppins', sans-serif; 
+  font-family: 'Urbanist', sans-serif; 
 }
 
 p, span, div {
-  font-family: 'Raleway', sans-serif; 
+  font-family: 'Urbanist', sans-serif; 
 }
 
 img{
   pointer-events: none;
 }
 
-
+@media (min-width:768px){
+  .p-txt{
+    font-size: 20px;
+  }
+  .p-txt-btn{
+    font-size: 24px;
+  }
+  .f-24{
+    font-size: 24px;
+  }
+  .f-30{
+    font-size: 30px;
+  }
+  .f-55{
+    font-size: 55px;
+  }
+}
 
 .nav{
   height: 80px;
@@ -241,6 +257,7 @@ display: block;
 
 .body-apple{
   display: flex;
+  align-items: center;
 }
 
 .body-txt-btn {
@@ -280,6 +297,7 @@ border-radius: 80px;
 
 @media (max-width: 768px) {
 .intro {
+  text-align: center;
   margin-top: 5%;
   margin-left: 5%;
   margin-right: 5%;
@@ -287,14 +305,12 @@ border-radius: 80px;
 
 .body {
   flex-direction: column; /* Stack content vertically */
-  text-align: center; /* Center-align text for better readability */
 }
 
 .text {
   width: 100%; /* Allow text to occupy full width */
   margin-bottom: 20px;
   align-items: center;
-  text-align: center;
 }
 
 .profile {
