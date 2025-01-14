@@ -1,5 +1,6 @@
 import React, { useState, useRef } from "react";
 import "./CSS/Style.css"; // Keep your existing styles
+import './CSS/Dark.css'
 import rightarrow from './icons/rightarrow.svg';
 import leftarrow from './icons/leftarrow.svg';
 import quotes from './icons/quotes.svg';
@@ -33,26 +34,31 @@ const Carousel = (props) => {
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
-  const touchStartX = useRef(0); // Track the initial touch position
+  const touchStartX = useRef(0); 
+  const [direction, setDirection] = useState("");
 
   const nextSlide = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % slides.length);
+    setDirection("left");
   };
 
   const prevSlide = () => {
     setCurrentIndex((prevIndex) => (prevIndex - 1 + slides.length) % slides.length);
+    setDirection("right");
   };
 
   // Handle swipe events
   const handleTouchStart = (e) => {
     touchStartX.current = e.touches[0].clientX; // Get the initial touch position
   };
+  
 
   const handleTouchMove = (e) => {
-    // Prevent default behavior if you need to swipe without scrolling
-    e.preventDefault();
+    e.preventDefault(); // Prevent default behavior if you need to swipe without scrolling
   };
 
+
+  
   const handleTouchEnd = (e) => {
     const touchEndX = e.changedTouches[0].clientX; // Get the touch end position
     const swipeThreshold = 50; // Minimum distance to detect a swipe
@@ -76,14 +82,13 @@ const Carousel = (props) => {
         {slides.map((slide, index) => (
           <div
             key={slide.id}
-            className={`slide ${index === currentIndex ? "active" : ""}`}
+            className={`slide swipe-${direction} ${index === currentIndex ? "active" : ""}`}
           >
             {index === currentIndex && (
               <>
                 <h2 style={{ fontSize: 50, marginTop: 50 }}>{slide.heading}</h2>
                 <div className="slider-body">
                   <div className="quote">
-
                     <img
                       viewBox="0 0 10 10"
                       className={`quote-svg quote-svg-${props.mode}`}
@@ -111,7 +116,7 @@ const Carousel = (props) => {
             )}
           </div>
         ))}
-        {/* Navigation buttons (hidden on mobile) */}
+        {/* Navigation buttons */}
         <button className={`prev-btn btn-${props.mode}`} onClick={prevSlide}>
           <img src={leftarrow} alt="Left arrow" className={`slider-icon-${props.mode}`} />
         </button>
@@ -119,7 +124,8 @@ const Carousel = (props) => {
           <img src={rightarrow} alt="Right arrow" className={`slider-icon-${props.mode}`} />
         </button>
       </div>
-      {/* Dots for navigation */}
+
+      {/* Dots navigation */}
       <div className="dots-container">
         {slides.map((_, index) => (
           <div

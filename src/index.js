@@ -8,6 +8,8 @@ import Projects from './Components/Projects';
 import Services from './Components/Services';
 import Contact from './Components/Contact';
 import Footer from './Components/Footer';
+import './Components/CSS/Style.css'
+import './Components/CSS/Dark.css'
 
 const App = () => {
   const HomeRef = useRef(null);

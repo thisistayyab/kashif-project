@@ -1,7 +1,9 @@
 import React from 'react'
 import './CSS/Style.css'
+import './CSS/Dark.css'
 import aboutImage from './images/about-img.jpg'
 import Roadmap from './Roadmap'
+
 const AboutUs = (props) => {
   return (
     <>
