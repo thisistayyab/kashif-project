@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/kashif-project/static/css/main.7a373be7.css",
+    "main.css": "/kashif-project/static/css/main.3f84c5aa.css",
     "main.js": "/kashif-project/static/js/main.862cc4fd.js",
     "static/media/about-img.jpg": "/kashif-project/static/media/about-img.bf8560df93eb1f1dba2e.jpg",
     "static/media/hello.svg": "/kashif-project/static/media/hello.4f3d64c099852add63e4cbe9540a2349.svg",
@@ -34,11 +34,11 @@
     "static/media/dark.svg": "/kashif-project/static/media/dark.01d0feddcec0fe5ce9548fc2ceaf656a.svg",
     "static/media/rightarrow.svg": "/kashif-project/static/media/rightarrow.8f557680dd0374f5fd7c9e03ab97b42c.svg",
     "static/media/leftarrow.svg": "/kashif-project/static/media/leftarrow.448682c6a60aa397db2a68ad1f5b9903.svg",
-    "main.7a373be7.css.map": "/kashif-project/static/css/main.7a373be7.css.map",
+    "main.3f84c5aa.css.map": "/kashif-project/static/css/main.3f84c5aa.css.map",
     "main.862cc4fd.js.map": "/kashif-project/static/js/main.862cc4fd.js.map"
   },
   "entrypoints": [
-    "static/css/main.7a373be7.css",
+    "static/css/main.3f84c5aa.css",
     "static/js/main.862cc4fd.js"
   ]
 }
