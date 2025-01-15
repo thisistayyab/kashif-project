@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/kashif-project/static/css/main.3f84c5aa.css",
-    "main.js": "/kashif-project/static/js/main.862cc4fd.js",
+    "main.css": "/kashif-project/static/css/main.b168be9c.css",
+    "main.js": "/kashif-project/static/js/main.ad2861ed.js",
     "static/media/about-img.jpg": "/kashif-project/static/media/about-img.bf8560df93eb1f1dba2e.jpg",
     "static/media/hello.svg": "/kashif-project/static/media/hello.4f3d64c099852add63e4cbe9540a2349.svg",
     "static/media/road-dark.png": "/kashif-project/static/media/road-dark.945100df607df6224f97.png",
@@ -34,11 +34,11 @@
     "static/media/dark.svg": "/kashif-project/static/media/dark.01d0feddcec0fe5ce9548fc2ceaf656a.svg",
     "static/media/rightarrow.svg": "/kashif-project/static/media/rightarrow.8f557680dd0374f5fd7c9e03ab97b42c.svg",
     "static/media/leftarrow.svg": "/kashif-project/static/media/leftarrow.448682c6a60aa397db2a68ad1f5b9903.svg",
-    "main.3f84c5aa.css.map": "/kashif-project/static/css/main.3f84c5aa.css.map",
-    "main.862cc4fd.js.map": "/kashif-project/static/js/main.862cc4fd.js.map"
+    "main.b168be9c.css.map": "/kashif-project/static/css/main.b168be9c.css.map",
+    "main.ad2861ed.js.map": "/kashif-project/static/js/main.ad2861ed.js.map"
   },
   "entrypoints": [
-    "static/css/main.3f84c5aa.css",
-    "static/js/main.862cc4fd.js"
+    "static/css/main.b168be9c.css",
+    "static/js/main.ad2861ed.js"
   ]
 }
